@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use DTOPerformanceComparison\DTOPerformanceComparison;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+(new DTOPerformanceComparison($argv))->run();

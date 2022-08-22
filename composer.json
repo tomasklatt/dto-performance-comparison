@@ -1,0 +1,26 @@
+{
+    "name": "tomasklatt/dto-performance-comparison",
+    "description": "Performance comparison between SpatieDTO, own written DTOs and raw data (associative arrays)",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomas Klatt",
+            "email": "tomas.klatt@livesport.eu"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "fakerphp/faker": "^1.20",
+        "spatie/data-transfer-object": "^3.8"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "DTOPerformanceComparison\\": "src/DTOPerformanceComparison"
+        }
+    },
+    "bin": [
+        "bin/dtopc"
+    ]
+}
