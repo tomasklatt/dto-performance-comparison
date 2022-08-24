@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace DTOPerformanceComparison\DTOs\SpatieDTO;
 
-use DateTimeImmutable;
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Casters\ArrayCaster;
-use Spatie\DataTransferObject\Casters\DataTransferObjectCaster;
 use Spatie\DataTransferObject\DataTransferObject;
 
 class PersonDTO extends DataTransferObject

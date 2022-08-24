@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace DTOPerformanceComparison\DTOs\SpatieDTO;
 
-use DateTimeImmutable;
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Casters\ArrayCaster;
@@ -24,5 +23,5 @@ class LeagueDTO extends DataTransferObject
     /** @var ClubDTO[] */
     #[MapFrom('clubs')]
     #[CastWith(ArrayCaster::class, itemType: ClubDTO::class)]
-    public readonly array|null $clubs;
+    public readonly array $clubs;
 }

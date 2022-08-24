@@ -10,7 +10,7 @@ class LeagueDTO
         public readonly string $name,
         public readonly string $dateFounded,
         public readonly string $country,
-        public readonly array|null $clubs,
+        public readonly array $clubs,
     ) {
     }
 }

@@ -9,8 +9,8 @@ class PersonDTO
     public function __construct(
         public readonly string $name,
         public readonly string $dateBorn,
-        public readonly array|null $kids,
-        public readonly string|null $wife,
+        public readonly array $kids,
+        public readonly string $wife,
     ) {
     }
 }

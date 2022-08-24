@@ -9,11 +9,11 @@ class ClubDTO
     public function __construct(
         public readonly string $name,
         public readonly string $dateFounded,
-        public readonly PersonDTO|null $owner,
+        public readonly PersonDTO $owner,
         public readonly int $trophyCount,
         public array|null $players,
-        public readonly PersonDTO|null $coach,
-        public readonly PersonDTO|null $manager,
+        public readonly PersonDTO $coach,
+        public readonly PersonDTO $manager,
     ) {
     }
 }
