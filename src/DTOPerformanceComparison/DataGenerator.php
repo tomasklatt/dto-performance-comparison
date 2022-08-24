@@ -48,7 +48,7 @@ class DataGenerator
             'dateFounded' => $this->faker->date(),
             'country' => $country,
             'clubs' => $this->generateCollections(
-                $this->faker->numberBetween(10, 20),
+                $this->faker->numberBetween(2, 5),
                 $this->generateClub(...)
             )
         ];
@@ -64,7 +64,7 @@ class DataGenerator
             'owner' => $this->generatePerson(),
             'trophyCount' => $this->faker->numberBetween(0, 50),
             'players' => $this->generateCollections(
-                $this->faker->numberBetween(18, 22),
+                $this->faker->numberBetween(5, 10),
                 $this->generatePerson(...)
             ),
             'coach' => $this->generatePerson(),

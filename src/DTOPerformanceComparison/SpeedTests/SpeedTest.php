@@ -30,7 +30,7 @@ abstract class SpeedTest
     private function getValue(): ResultDTO
     {
         return new ResultDTO(
-            timeSpent: intval((microtime(true) - $this->startTime) * 1000),
+            timeSpent: round((microtime(true) - $this->startTime) * 1000, 2),
             memoryUsed: intval((memory_get_usage() - $this->startMemoryUsage) / 1024),
         );
     }

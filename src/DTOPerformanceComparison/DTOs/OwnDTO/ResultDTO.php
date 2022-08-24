@@ -7,7 +7,7 @@ namespace DTOPerformanceComparison\DTOs\OwnDTO;
 class ResultDTO
 {
     public function __construct(
-        public readonly int $timeSpent,
+        public readonly float $timeSpent,
         public readonly int $memoryUsed,
     ) {
     }
