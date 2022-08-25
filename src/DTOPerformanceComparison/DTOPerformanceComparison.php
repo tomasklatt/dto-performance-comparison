@@ -52,9 +52,9 @@ class DTOPerformanceComparison
     {
         foreach ($this->args as $key => $value) {
             if (in_array($value, self::PARAM_COUNT) ){
-                $this->count = intval($this->args[$key+1]);
+                $this->count = intval($this->args[$key+1] ?? 0);
             } elseif (in_array($value, self::PARAM_SEED)) {
-                $this->seed = intval($this->args[$key+1]);
+                $this->seed = intval($this->args[$key+1] ?? 0);
             }
         }
     }
