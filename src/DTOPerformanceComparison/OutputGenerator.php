@@ -15,9 +15,9 @@ class OutputGenerator
 
     private string $outputBuffer = '';
 
-    private function prepareString(string $text, string $color = self::OUTPUT_COLOR_WHITE,): void
+    private function prepareString(string $text, string $color = self::OUTPUT_COLOR_WHITE): void
     {
-        $this->outputBuffer .= self::OUTPUT_COLOR . $color . $text;
+        $this->outputBuffer .= $color . $text;
     }
 
     private function prepareYellowString(string $text): void
