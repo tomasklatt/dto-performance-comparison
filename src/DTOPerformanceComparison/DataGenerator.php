@@ -6,7 +6,7 @@ namespace DTOPerformanceComparison;
 use Faker\Factory;
 use Faker\Generator;
 
-class DataGenerator
+final class DataGenerator
 {
     private readonly Generator $faker;
 

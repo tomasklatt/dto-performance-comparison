@@ -9,7 +9,7 @@ use DTOPerformanceComparison\Runner\AssociativeArraySpeedRunner;
 use DTOPerformanceComparison\Runner\OwnDTOSpeedRunner;
 use DTOPerformanceComparison\Runner\SpatieDTOySpeedRunner;
 
-class App
+final class App
 {
     private const PARAM_COUNT = ['-c', '-count'];
     private const PARAM_SEED = ['-s', '-seed'];
