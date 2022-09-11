@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\SpeedTests;
+namespace DTOPerformanceComparison\Runner;
 
 use DTOPerformanceComparison\DTOs\OwnDTO\Casters\LeagueCaster;
 use DTOPerformanceComparison\DTOs\OwnDTO\LeagueDTO;
 
-final class OwnDTOSpeedTest extends SpeedTest
+final class OwnDTOSpeedRunner extends AbstractRunner
 {
     /**
      * @var array<LeagueDTO>

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\SpeedTests;
+namespace DTOPerformanceComparison\Runner;
 
 use DTOPerformanceComparison\DTOs\OwnDTO\ResultDTO;
 
-abstract class SpeedTest
+abstract class AbstractRunner
 {
     private float $startTime;
     private int $startMemoryUsage;

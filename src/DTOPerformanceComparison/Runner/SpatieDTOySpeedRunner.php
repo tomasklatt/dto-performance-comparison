@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\SpeedTests;
+namespace DTOPerformanceComparison\Runner;
 
 use DTOPerformanceComparison\DTOs\SpatieDTO\LeagueDTO;
 
-final class SpatieDTOySpeedTest extends SpeedTest
+final class SpatieDTOySpeedRunner extends AbstractRunner
 {
     /**
      * @var array<LeagueDTO>

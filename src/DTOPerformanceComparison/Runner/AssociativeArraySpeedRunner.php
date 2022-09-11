@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\SpeedTests;
+namespace DTOPerformanceComparison\Runner;
 
-final class AssociativeArraySpeedTest extends SpeedTest
+final class AssociativeArraySpeedRunner extends AbstractRunner
 {
     public function __construct(private readonly array $data) {}
 

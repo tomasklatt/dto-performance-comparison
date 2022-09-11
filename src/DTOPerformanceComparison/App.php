@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace DTOPerformanceComparison;
 
 use DTOPerformanceComparison\DTOs\OwnDTO\ResultsDTO;
-use DTOPerformanceComparison\SpeedTests\AssociativeArraySpeedTest;
-use DTOPerformanceComparison\SpeedTests\OwnDTOSpeedTest;
-use DTOPerformanceComparison\SpeedTests\SpatieDTOySpeedTest;
+use DTOPerformanceComparison\Runner\AssociativeArraySpeedRunner;
+use DTOPerformanceComparison\Runner\OwnDTOSpeedRunner;
+use DTOPerformanceComparison\Runner\SpatieDTOySpeedRunner;
 
-class DTOPerformanceComparison
+class App
 {
     private const PARAM_COUNT = ['-c', '-count'];
     private const PARAM_SEED = ['-s', '-seed'];
@@ -42,9 +42,9 @@ class DTOPerformanceComparison
             topLevelObjectCount: $dataGenerator->getTopLevelObjectCount(),
             totalObjectCount: $dataGenerator->getTotalObjectCount()
         );
-        $results->results['Associative array'] = (new AssociativeArraySpeedTest($generatedData))->run();
-        $results->results['Spatie DTO'] = (new SpatieDTOySpeedTest($generatedData))->run();
-        $results->results['Own DTO'] = (new OwnDTOSpeedTest($generatedData))->run();
+        $results->results['Associative array'] = (new AssociativeArraySpeedRunner($generatedData))->run();
+        $results->results['Spatie DTO'] = (new SpatieDTOySpeedRunner($generatedData))->run();
+        $results->results['Own DTO'] = (new OwnDTOSpeedRunner($generatedData))->run();
         return $results;
     }
 
