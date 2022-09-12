@@ -6,7 +6,6 @@ namespace DTOPerformanceComparison;
 
 use DTOPerformanceComparison\DTOs\OwnDTO\ResultsDTO;
 use splitbrain\phpcli\CLI;
-use splitbrain\phpcli\Colors;
 use splitbrain\phpcli\Options;
 
 final class App extends CLI
