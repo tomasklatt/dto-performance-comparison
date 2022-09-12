@@ -61,10 +61,10 @@ final class App extends CLI
 
     private function printResults(ResultsDTO $results): void
     {
-        $this->info('Test finished, tested on dataset with ' . $results->topLevelObjectCount . ' top level objects count and ' . $results->totalObjectCount . ' total objects count.' . PHP_EOL);
-        $this->info(str_pad('', 100, '=') . PHP_EOL);
+        $this->info('Test finished, tested on dataset with ' . $results->topLevelObjectCount . ' top level objects count and ' . $results->totalObjectCount . ' total objects count.');
+        $this->info(str_pad('', 100, '='));
         $this->prepareResultsTableRow('Test name', 'Time spent (ms)', 'Mem. used (kb)');
-        $this->info(str_pad('', 100, '-') . PHP_EOL);
+        $this->info(str_pad('', 100, '-'));
         foreach ($results->results as $testName => $testResult) {
             $this->prepareResultsTableRow($testName, strval($testResult->timeSpent), strval($testResult->memoryUsed));
         }
@@ -72,6 +72,6 @@ final class App extends CLI
 
     private function prepareResultsTableRow(string $rowTitle, string $timeSpent, string $memoryUsed): void
     {
-        $this->info(str_pad($rowTitle, 50) . str_pad($timeSpent, 25). str_pad($memoryUsed, 25) . PHP_EOL);
+        $this->info(str_pad($rowTitle, 50) . str_pad($timeSpent, 25). str_pad($memoryUsed, 25));
     }
 }
