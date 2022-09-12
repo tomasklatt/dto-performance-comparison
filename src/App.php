@@ -47,7 +47,7 @@ final class App extends CLI
     protected function setup(Options $options): void
     {
         $options->setHelp('Compare performance of associative arrays, SpatieDTO and own written DTO.');
-        $options->registerOption('count', 'Count of leagues generated"', 'c');
+        $options->registerOption('count', 'Count of leagues generated', 'c');
     }
 
     protected function main(Options $options): void
