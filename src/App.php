@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DTOPerformanceComparison;
 
 use DTOPerformanceComparison\DTOs\OwnDTO\ResultsDTO;
+use DTOPerformanceComparison\Runner\AbstractRunner;
 use DTOPerformanceComparison\Runner\AssociativeArraySpeedRunner;
 use DTOPerformanceComparison\Runner\OwnDTOSpeedRunner;
 use DTOPerformanceComparison\Runner\SpatieDTOySpeedRunner;
@@ -27,9 +28,14 @@ final class App extends CLI
             topLevelObjectCount: $dataGenerator->getTopLevelObjectCount(),
             totalObjectCount: $dataGenerator->getTotalObjectCount()
         );
-        $results->results['Associative array'] = (new AssociativeArraySpeedRunner($generatedData))->run();
-        $results->results['Spatie DTO'] = (new SpatieDTOySpeedRunner($generatedData))->run();
-        $results->results['Own DTO'] = (new OwnDTOSpeedRunner($generatedData))->run();
+        foreach (array_diff(scandir(__DIR__ . '/Runner'), array('.', '..', 'AbstractRunner.php')) as $runner){
+            if(!str_ends_with($runner, '.php')){
+                continue;
+            }
+            $className =  substr($runner, 0, strlen($runner) - 4);
+            $classNameWithNameSpace = 'DTOPerformanceComparison\Runner\\' . $className;
+            $results->results[$className] = (new $classNameWithNameSpace($generatedData))->run();
+        }
         return $results;
     }
 
