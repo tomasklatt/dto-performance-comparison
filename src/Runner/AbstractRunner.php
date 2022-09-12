@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DTOPerformanceComparison\Runner;
 
-use DTOPerformanceComparison\DTOs\OwnDTO\ResultDTO;
+use DTOPerformanceComparison\DTOs\ResultOwnDTO;
 
 abstract class AbstractRunner
 {
@@ -17,7 +17,7 @@ abstract class AbstractRunner
 
     protected abstract function sortData(); //sort players in all clubs by name
 
-    public function run(): ResultDTO
+    public function run(): ResultOwnDTO
     {
         $this->startTime = microtime(true);
         $this->startMemoryUsage = memory_get_usage();
@@ -27,9 +27,9 @@ abstract class AbstractRunner
         return $this->getValue();
     }
 
-    private function getValue(): ResultDTO
+    private function getValue(): ResultOwnDTO
     {
-        return new ResultDTO(
+        return new ResultOwnDTO(
             timeSpent: round((microtime(true) - $this->startTime) * 1000, 2),
             memoryUsed: intval((memory_get_usage() - $this->startMemoryUsage) / 1024),
         );

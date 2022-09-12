@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace DTOPerformanceComparison\Runner;
 
-use DTOPerformanceComparison\DTOs\OwnDTO\Casters\LeagueCaster;
-use DTOPerformanceComparison\DTOs\OwnDTO\LeagueDTO;
+use DTOPerformanceComparison\DTOs\Casters\LeagueCaster;
+use DTOPerformanceComparison\DTOs\LeagueOwnDTO;
 
 final class OwnDTOSpeedRunner extends AbstractRunner
 {
     /**
-     * @var array<LeagueDTO>
+     * @var array<LeagueOwnDTO>
      */
     private array $parsedData = [];
 
@@ -19,7 +19,7 @@ final class OwnDTOSpeedRunner extends AbstractRunner
     protected function parseData(): void
     {
         foreach ($this->data['leagues'] ?? [] as $league){
-            $this->parsedData['leagues'] = new LeagueDTO(...LeagueCaster::cast($league));
+            $this->parsedData['leagues'] = new LeagueOwnDTO(...LeagueCaster::cast($league));
         }
     }
 

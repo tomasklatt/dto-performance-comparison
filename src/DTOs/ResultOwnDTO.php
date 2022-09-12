@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\DTOs\OwnDTO;
+namespace DTOPerformanceComparison\DTOs;
 
-class ResultDTO
+class ResultOwnDTO
 {
     public function __construct(
         public readonly float $timeSpent,

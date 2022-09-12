@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\DTOs\SpatieDTO;
+namespace DTOPerformanceComparison\DTOs;
 
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Casters\ArrayCaster;
 use Spatie\DataTransferObject\DataTransferObject;
 
-class ClubDTO extends DataTransferObject
+class ClubSpatieDTO extends DataTransferObject
 {
     #[MapFrom('name')]
     public readonly string $name;
@@ -18,19 +18,19 @@ class ClubDTO extends DataTransferObject
     public readonly string $dateFounded;
 
     #[MapFrom('owner')]
-    public readonly PersonDTO $owner;
+    public readonly PersonSpatieDTO $owner;
 
     #[MapFrom('trophyCount')]
     public readonly int $trophyCount;
 
-    /** @var PersonDTO[] */
+    /** @var PersonSpatieDTO[] */
     #[MapFrom('players')]
-    #[CastWith(ArrayCaster::class, PersonDTO::class)]
+    #[CastWith(ArrayCaster::class, PersonSpatieDTO::class)]
     public array $players;
 
     #[MapFrom('coach')]
-    public readonly PersonDTO $coach;
+    public readonly PersonSpatieDTO $coach;
 
     #[MapFrom('manager')]
-    public readonly PersonDTO $manager;
+    public readonly PersonSpatieDTO $manager;
 }

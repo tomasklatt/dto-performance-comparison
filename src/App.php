@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DTOPerformanceComparison;
 
-use DTOPerformanceComparison\DTOs\OwnDTO\ResultsDTO;
+use DTOPerformanceComparison\DTOs\ResultsOwnDTO;
 use splitbrain\phpcli\CLI;
 use splitbrain\phpcli\Options;
 
@@ -14,12 +14,12 @@ final class App extends CLI
 
     private int $count = 20;
 
-    private function runWithParams(Options $options): ResultsDTO
+    private function runWithParams(Options $options): ResultsOwnDTO
     {
         $this->parseParams($options);
         $dataGenerator = new DataGenerator(leagueMaxCount: $this->count);
         $generatedData = $dataGenerator->generate();
-        $results = new ResultsDTO(
+        $results = new ResultsOwnDTO(
             topLevelObjectCount: $dataGenerator->getTopLevelObjectCount(),
             totalObjectCount: $dataGenerator->getTotalObjectCount()
         );
@@ -59,7 +59,7 @@ final class App extends CLI
         }
     }
 
-    private function printResults(ResultsDTO $results): void
+    private function printResults(ResultsOwnDTO $results): void
     {
         $this->colors->disable();
         $this->info('Test finished, tested on dataset with ' . $results->topLevelObjectCount . ' top level objects count and ' . $results->totalObjectCount . ' total objects count.');

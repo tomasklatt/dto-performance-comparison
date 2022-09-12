@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\DTOs\OwnDTO;
+namespace DTOPerformanceComparison\DTOs;
 
-class ResultsDTO
+class ResultsOwnDTO
 {
     /**
      * @param int $topLevelObjectCount
      * @param int $totalObjectCount
-     * @param array<ResultDTO> $results
+     * @param array<ResultOwnDTO> $results
      */
     public function __construct(
         public readonly int $topLevelObjectCount,

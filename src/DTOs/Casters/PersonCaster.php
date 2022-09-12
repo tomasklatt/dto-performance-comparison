@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\DTOs\OwnDTO\Casters;
+namespace DTOPerformanceComparison\DTOs\Casters;
 
-use DTOPerformanceComparison\DTOs\OwnDTO\PersonDTO;
+use DTOPerformanceComparison\DTOs\PersonOwnDTO;
 
 class PersonCaster
 {
@@ -14,7 +14,7 @@ class PersonCaster
             'name' => $value['name'],
             'dateBorn' => $value['dateBorn'],
             'kids' => \array_map(
-                fn (array $kid) => new PersonDTO(...self::cast($kid)),
+                fn (array $kid) => new PersonOwnDTO(...self::cast($kid)),
                 $value['kids'] ?? [],
             ),
             'wife' => $value['wife'] ?? '',

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace DTOPerformanceComparison\Runner;
 
-use DTOPerformanceComparison\DTOs\SpatieDTO\LeagueDTO;
+use DTOPerformanceComparison\DTOs\LeagueSpatieDTO;
 
 final class SpatieDTOySpeedRunner extends AbstractRunner
 {
     /**
-     * @var array<LeagueDTO>
+     * @var array<LeagueSpatieDTO>
      */
     private array $parsedData = [];
 
@@ -18,7 +18,7 @@ final class SpatieDTOySpeedRunner extends AbstractRunner
     protected function parseData(): void
     {
         foreach ($this->data['leagues'] ?? [] as $league){
-            $this->parsedData[] = new LeagueDTO($league);
+            $this->parsedData[] = new LeagueSpatieDTO($league);
         }
     }
 

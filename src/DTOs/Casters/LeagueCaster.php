@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\DTOs\OwnDTO\Casters;
+namespace DTOPerformanceComparison\DTOs\Casters;
 
-use DTOPerformanceComparison\DTOs\OwnDTO\ClubDTO;
+use DTOPerformanceComparison\DTOs\ClubOwnDTO;
 
 class LeagueCaster
 {
@@ -14,7 +14,7 @@ class LeagueCaster
             'name' => $value['name'],
             'dateFounded' => $value['dateFounded'],
             'clubs' => \array_map(
-                fn (array $club) => new ClubDTO(...ClubCaster::cast($club)),
+                fn (array $club) => new ClubOwnDTO(...ClubCaster::cast($club)),
                 $value['clubs'],
             ),
             'country' => $value['country'],
