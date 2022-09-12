@@ -14,10 +14,10 @@ final class DataGenerator
     private int $clubCount = 0;
     private int $personCount = 0;
 
-    public function __construct(private readonly int $leagueMaxCount, int $seed)
+    public function __construct(private readonly int $leagueMaxCount)
     {
         $this->faker = Factory::create();
-        $this->faker->seed($seed);
+        $this->faker->seed(1234);
     }
 
     public function generate(): array
