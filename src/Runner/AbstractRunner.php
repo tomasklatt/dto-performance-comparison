@@ -13,9 +13,9 @@ abstract class AbstractRunner
 
     protected abstract function parseData();
 
-    protected abstract function filterData();
+    protected abstract function filterData(); //remove players with 2 or fewer kids
 
-    protected abstract function sortData();
+    protected abstract function sortData(); //sort players in all clubs by name
 
     public function run(): ResultDTO
     {

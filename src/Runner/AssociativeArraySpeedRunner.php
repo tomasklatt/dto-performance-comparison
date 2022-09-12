@@ -10,7 +10,6 @@ final class AssociativeArraySpeedRunner extends AbstractRunner
 
     protected function parseData(): void
     {
-        return;
     }
 
     protected function filterData(): void
@@ -24,7 +23,6 @@ final class AssociativeArraySpeedRunner extends AbstractRunner
 
     protected function sortData(): void
     {
-        //sort players in all clubs by name
         foreach ($this->data['leagues'] ?? [] as $league){
             foreach ($league['clubs'] as $club){
                 uasort($club['players'], fn($p1, $p2) => $p1['name'] > $p2['name']);
