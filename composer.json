@@ -23,5 +23,8 @@
     },
     "bin": [
         "bin/dtopc"
-    ]
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
 }
