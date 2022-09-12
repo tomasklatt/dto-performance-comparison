@@ -6,6 +6,7 @@ namespace DTOPerformanceComparison;
 
 use DTOPerformanceComparison\DTOs\OwnDTO\ResultsDTO;
 use splitbrain\phpcli\CLI;
+use splitbrain\phpcli\Colors;
 use splitbrain\phpcli\Options;
 
 final class App extends CLI
@@ -61,6 +62,7 @@ final class App extends CLI
 
     private function printResults(ResultsDTO $results): void
     {
+        $this->colors->disable();
         $this->info('Test finished, tested on dataset with ' . $results->topLevelObjectCount . ' top level objects count and ' . $results->totalObjectCount . ' total objects count.');
         $this->info(str_pad('', 100, '='));
         $this->prepareResultsTableRow('Test name', 'Time spent (ms)', 'Mem. used (kb)');
