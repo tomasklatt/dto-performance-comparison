@@ -5,17 +5,12 @@ declare(strict_types=1);
 namespace DTOPerformanceComparison;
 
 use DTOPerformanceComparison\DTOs\OwnDTO\ResultsDTO;
-use DTOPerformanceComparison\Runner\AbstractRunner;
-use DTOPerformanceComparison\Runner\AssociativeArraySpeedRunner;
-use DTOPerformanceComparison\Runner\OwnDTOSpeedRunner;
-use DTOPerformanceComparison\Runner\SpatieDTOySpeedRunner;
 use splitbrain\phpcli\CLI;
 use splitbrain\phpcli\Options;
 
 final class App extends CLI
 {
     private const PARAM_COUNT = ['-c', '-count'];
-    private const PARAM_SEED = ['-s', '-seed'];
 
     private int $count = 20;
 
