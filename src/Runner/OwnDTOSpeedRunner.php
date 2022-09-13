@@ -19,7 +19,7 @@ final class OwnDTOSpeedRunner extends AbstractRunner
     protected function parseData(): void
     {
         foreach ($this->data['leagues'] ?? [] as $league){
-            $this->parsedData['leagues'] = new LeagueOwnDTO(...LeagueCaster::cast($league));
+            $this->parsedData[] = new LeagueOwnDTO(...LeagueCaster::cast($league));
         }
     }
 
