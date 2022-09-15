@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace DTOPerformanceComparison\Test;
-
 use DTOPerformanceComparison\DataGenerator;
 use PHPUnit\Framework\TestCase;
 
